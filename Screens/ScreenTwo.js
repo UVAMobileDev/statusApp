@@ -24,7 +24,7 @@ export default class ScreenTwo extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScreenName name={'Screen two: breakdown of very call (categories)'} />
+        <ScreenName name={'Screen two: breakdown of every call (categories)'} />
       </View>
     );
   }

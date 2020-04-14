@@ -1,7 +1,6 @@
 import React from 'react';
 import MapView from 'react-native-maps';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
-
 import { FontAwesome } from '@expo/vector-icons';
 import ScreenName from '../components/ScreenName.js'
 

@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import ScreenName from '../components/ScreenName.js'
 
+
 //props.focused indicates if the page is selected or not
 const TabIcon = (props) => (
   <FontAwesome

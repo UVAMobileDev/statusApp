@@ -24,9 +24,14 @@ export default class ScreenThree extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <MapView style={styles.mapStyle} />
-      </View>
+      <MapView style={styles.container}
+      initialRegion = {{
+        latitude: 38.0356,
+        longitude: -78.5034,
+        latitudeDelta: 0.00009,
+        longitudeDelta: 0.009,
+      }}
+  />
     );
   }
 }

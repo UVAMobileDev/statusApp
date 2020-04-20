@@ -17,7 +17,8 @@ const TabIcon = (props) => (
 // Icons for each tab can be found from https://expo.github.io/vector-icons/
 // After creating the TabIcon, you need to add it to your static navigationOptions as shown below
 
-var api_link = `https://api.devhub.virginia.edu/v1/transit/vehicles`;
+var api_transit = `https://api.devhub.virginia.edu/v1/transit/vehicles`;
+var api_facilities = `https://api.devhub.virginia.edu/v1/facilities`;
 
 export default class ScreenOne extends React.Component {
 
@@ -30,25 +31,35 @@ export default class ScreenOne extends React.Component {
     super(props);
     this.state = {
       loaded: false,
-      busses: []
+      busses: [] //,
+      // buildings: []
     }
   }
   async updateBusses() {
-    let data = await fetch(api_link).then(res => res.json());
+    let data = await fetch(api_transit).then(res => res.json());
     this.setState({
         loaded: true,
         busses: data.vehicles
     });
   }
+  // async updateBuildings() {
+  //       let data = await fetch(api_facilities).then(res => res.json());
+  //       this.setState({
+  //           loaded: true,
+  //           buildings: data.facilities
+  //       });
+  // }
   componentDidMount() {
     this.updateBusses();
+    // this.updateBuildings
   }
 
   render() {
     if(!this.state.loaded) return (<Text>The transit API is down. </Text>);
+    // if(!this.state.loaded) return (<Text>The facilities API is down. </Text>);
     return (
-      <View style={styles.container}>
-        <Text>The transit API is up. </Text>
+      <View style={styles.info}>
+        <Text style={styles.status}>The transit API is up. </Text>
         <ScreenName info={'This status app was created by the UVA Development Hub intern team comprised of Alice Han, Arnold Garcia, Cathy Nguyen, and Jasmine Dogu.'} />
       </View>
     );
@@ -56,10 +67,18 @@ export default class ScreenOne extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  info: {
     flex: 1,
     alignItems: 'flex-start',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     marginLeft: 8,
+    marginBottom: 10,
   },
+  status: {
+    flex: 1,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    marginLeft: 8,
+    marginTop: 10,
+  }
 });

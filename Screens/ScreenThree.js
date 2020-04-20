@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-//
+import MapView, { Marker, AnimatedRegion } from 'react-native-maps';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import ScreenName from '../components/ScreenName.js'
 
@@ -13,6 +13,7 @@ const TabIcon = (props) => (
   />
 )
 
+
 // Icons for each tab can be found from https://expo.github.io/vector-icons/
 //After creating the TabIcon, you need to add it to your static navigationOptions as shown below
 export default class ScreenThree extends React.Component {
@@ -20,20 +21,46 @@ export default class ScreenThree extends React.Component {
   static navigationOptions = {
     tabBarIcon: TabIcon
   };
+//Has one marker, needs more
+///  <MapView.Marker coordinate={{latitude: shop.latitude, longitude: shop.longitude}} image={require('./img/initialMarker.png')} />})}
+// need to loop over the markers in  MapView
 
   render() {
     return (
       <View style={styles.container}>
-        <ScreenName name={'Screen three: live map of all the vehicles moving around'} />
-      </View>
+          <MapView style={styles.map}
+            initialRegion={{
+                latitude: 38.0356,
+                longitude: -78.5034,
+                latitudeDelta: 0.00009,
+                longitudeDelta: 0.009,
+            }}
+          >
+          <MapView.Marker
+              coordinate={{latitude: 38.0356,
+              longitude: -78.5034}}
+              title={"Rotunda"}
+              description={"This is the Rotunda"}
+           />
+        </MapView>
+   </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+var styles = StyleSheet.create({
+
+ container: {
+   flex: 1,
+   justifyContent: 'center',
+   alignItems: 'center',
+   backgroundColor: '#F5FCFF',
+ },
+   map: {
+     position: 'absolute',
+     top: 0,
+     left: 0,
+     right: 0,
+     bottom: 0,
+   }
 });

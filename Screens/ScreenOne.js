@@ -15,7 +15,9 @@ const TabIcon = (props) => (
 )
 
 // Icons for each tab can be found from https://expo.github.io/vector-icons/
-//After creating the TabIcon, you need to add it to your static navigationOptions as shown below
+// After creating the TabIcon, you need to add it to your static navigationOptions as shown below
+
+var api_link = `https://api.devhub.virginia.edu/v1/transit/vehicles`;
 
 export default class ScreenOne extends React.Component {
 

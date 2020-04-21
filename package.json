@@ -8,41 +8,26 @@
     "eject": "expo eject"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@react-native-community/masked-view": "^0.1.5",
-    "@react-navigation/drawer": "^5.4.1",
-    "@react-navigation/native": "^5.1.6",
-=======
     "@react-native-community/masked-view": "0.1.5",
     "@react-navigation/drawer": "^5.4.1",
->>>>>>> 48ac60fc115d3e459ef1a1a1e3ec581f4c6b7444
+    "@react-navigation/native": "^5.1.6",
     "expo": "~36.0.0",
     "google-map-react": "^1.1.6",
     "google-maps-react": "^2.0.2",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
-<<<<<<< HEAD
-    "react-native-gesture-handler": "^1.5.6",
-    "react-native-reanimated": "^1.4.0",
-    "react-native-safe-area-context": "^0.6.0",
-    "react-native-screens": "^2.0.0-alpha.12",
+    "react-native-gesture-handler": "~1.5.0",
+    "react-native-reanimated": "~1.4.0",
+    "react-native-safe-area-context": "0.6.0",
+    "react-native-screens": "2.0.0-alpha.12",
     "react-native-side-drawer": "^1.2.6",
     "react-native-web": "~0.11.7",
     "react-navigation": "^4.2.2",
     "react-navigation-tabs": "^2.8.2",
-    "react-simple-tree-menu": "^1.1.15"
-=======
-    "react-native-gesture-handler": "~1.5.0",
+    "react-simple-tree-menu": "^1.1.15",
     "react-native-maps": "^0.27.1",
-    "react-native-reanimated": "~1.4.0",
-    "react-native-safe-area-context": "0.6.0",
-    "react-native-screens": "2.0.0-alpha.12",
-    "react-native-web": "~0.11.7",
-    "react-navigation": "^4.2.2",
-    "react-navigation-drawer": "^2.4.11",
-    "react-navigation-tabs": "^2.8.2"
->>>>>>> 48ac60fc115d3e459ef1a1a1e3ec581f4c6b7444
+    "react-navigation-drawer": "^2.4.11"
   },
   "devDependencies": {
     "babel-preset-expo": "~8.0.0",

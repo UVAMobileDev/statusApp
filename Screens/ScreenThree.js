@@ -2,7 +2,7 @@ import React from 'react';
 import MapView, { Marker, AnimatedRegion } from 'react-native-maps';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import ScreenName from '../components/ScreenName.js'
+import ScreenName from '../components/ScreenName.js';
 
 //props.focused indicates if the page is selected or not
 const TabIcon = (props) => (
@@ -13,6 +13,14 @@ const TabIcon = (props) => (
   />
 )
 
+import Busses from '../constants/Busses.js';
+const StopToMarker = stop => (<MapView.Marker
+                                  key={stop.id}
+                                  coordinate={{latitude: stop.position[0],
+                                  longitude: stop.position[1]}}
+                                  title={stop.name}
+                                  description={stop.description}
+                               />);
 
 // Icons for each tab can be found from https://expo.github.io/vector-icons/
 //After creating the TabIcon, you need to add it to your static navigationOptions as shown below
@@ -21,9 +29,6 @@ export default class ScreenThree extends React.Component {
   static navigationOptions = {
     tabBarIcon: TabIcon
   };
-//Has one marker, needs more
-///  <MapView.Marker coordinate={{latitude: shop.latitude, longitude: shop.longitude}} image={require('./img/initialMarker.png')} />})}
-// need to loop over the markers in  MapView
 
   render() {
     return (
@@ -36,12 +41,7 @@ export default class ScreenThree extends React.Component {
                 longitudeDelta: 0.009,
             }}
           >
-          <MapView.Marker
-              coordinate={{latitude: 38.0356,
-              longitude: -78.5034}}
-              title={"Rotunda"}
-              description={"This is the Rotunda"}
-           />
+          {Busses.map(StopToMarker)}
         </MapView>
    </View>
     );

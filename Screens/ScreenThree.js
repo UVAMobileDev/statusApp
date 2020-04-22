@@ -20,6 +20,8 @@ const StopToMarker = stop => (<MapView.Marker
                                   longitude: stop.position[1]}}
                                   title={stop.name}
                                   description={stop.description}
+                                  image = {require('../constants/bus.png')}
+                                  resizeMode="contain"
                                />);
 
 // Icons for each tab can be found from https://expo.github.io/vector-icons/
@@ -37,8 +39,8 @@ export default class ScreenThree extends React.Component {
             initialRegion={{
                 latitude: 38.0356,
                 longitude: -78.5034,
-                latitudeDelta: 0.00009,
-                longitudeDelta: 0.009,
+                latitudeDelta: 0.00005,
+                longitudeDelta: 0.005,
             }}
           >
           {Busses.map(StopToMarker)}
